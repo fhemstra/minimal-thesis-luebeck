@@ -1,8 +1,8 @@
-#import "titlepage.typ": *
-#import "disclaimer.typ": *
-#import "acknowledgement.typ": acknowledgement as acknowledgement_config
-#import "abstract.typ": *
-#import "utils/print_page_break.typ": *
+#import "template/config/titlepage.typ": *
+#import "template/config/disclaimer.typ": *
+#import "template/config/acknowledgement.typ": acknowledgement as acknowledgement_config
+#import "template/config/abstract.typ": *
+#import "template/config/utils/print_page_break.typ": *
 #import "@preview/abbr:0.1.1"
 
 #let thesis(
@@ -122,7 +122,7 @@
   pagebreak()
 
   // List of acronyms
-  include "acronyms.typ"
+  include "template/config/acronyms.typ"
   abbr.list(title: "List of acronyms")
 
   pagebreak()
@@ -138,7 +138,7 @@
   body
 
   pagebreak()
-  bibliography("../thesis.bib")
+  bibliography("template/thesis.bib")
 
   // List of figures.
   pagebreak()
@@ -158,5 +158,5 @@
 
   // Appendix.
   pagebreak()
-  include("../texts/appendix.typ")
+  include("template/texts/appendix.typ")
 }

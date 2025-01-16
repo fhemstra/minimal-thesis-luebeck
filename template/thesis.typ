@@ -1,4 +1,4 @@
-#import "config/thesis_template.typ": *
+#import "../thesis_template.typ": *
 #import "config/utils/todo.typ": TODO
 
 #let titleEnglish = "Towards Smart Inventions and their Novelty"
