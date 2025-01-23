@@ -21,9 +21,12 @@
   abstract-en: "",
   abstract-de: "",
   acknowledgement: none,
-  acronyms: none,
   appendix: none,
-  bib_path: none,
+  acronyms: none,
+  top-left-img: image("template/images/top-left.png"),
+  top-right-img: image("template/images/top-right.png"),
+  slogan-img: image("template/images/slogan.png"),
+  bib-path: none,
   is-print: false,
   show-fig-list: false,
   show-tab-list: false,
@@ -41,7 +44,10 @@
     institute: institute,
     company: company,
     submission-date: submission-date,
-    place: place
+    place: place,
+    top-left-img: top-left-img,
+    top-right-img: top-right-img,
+    slogan-img: slogan-img
   )
 
   print-page-break(print: is-print, to: "even")
