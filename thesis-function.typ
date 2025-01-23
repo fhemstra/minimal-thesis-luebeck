@@ -1,13 +1,13 @@
 #import "template/config/titlepage.typ": *
 #import "template/config/disclaimer.typ": *
-#import "template/config/acknowledgement.typ": acknowledgement as acknowledgement_config
+#import "template/config/acknowledgement.typ": acknowledgement as acknowledgement-config
 #import "template/config/abstract.typ": *
-#import "template/config/utils/print_page_break.typ": *
+#import "template/config/utils/print-page-break.typ": *
 #import "@preview/abbr:0.1.1"
 
 #let thesis(
   title: "",
-  titleGerman: "",
+  title-german: "",
   degree: "",
   program: "",
   supervisor: "",
@@ -16,17 +16,22 @@
   university: "",
   institute: "",
   company: none,
-  submissionDate: datetime,
-  abstract_en: "",
-  abstract_de: "",
-  acknowledgement: none,
+  submission-date: datetime,
   place: none,
-  is_print: false,
+  abstract-en: "",
+  abstract-de: "",
+  acknowledgement: none,
+  acronyms: none,
+  appendix: none,
+  bib_path: none,
+  is-print: false,
+  show-fig-list: false,
+  show-tab-list: false,
   body,
 ) = {
   titlepage(
     title: title,
-    titleGerman: titleGerman,
+    title-german: title-german,
     degree: degree,
     program: program,
     supervisor: supervisor,
@@ -35,11 +40,11 @@
     university: university,
     institute: institute,
     company: company,
-    submissionDate: submissionDate,
+    submission-date: submission-date,
     place: place
   )
 
-  print_page_break(print: is_print, to: "even")
+  print-page-break(print: is-print, to: "even")
 
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
@@ -50,17 +55,17 @@
     title: title,
     degree: degree,
     author: author,
-    submissionDate: submissionDate
+    submission-date: submission-date
   )
-  print_page_break(print: is_print)
+  print-page-break(print: is-print)
 
   if acknowledgement != none {
-    acknowledgement_config(acknowledgement)
-    print_page_break(print: is_print)
+    acknowledgement-config(acknowledgement)
+    print-page-break(print: is-print)
   }
 
-  abstract(lang: "en")[#abstract_en]
-  abstract(lang: "de")[#abstract_de]
+  abstract(lang: "en")[#abstract-en]
+  abstract(lang: "de")[#abstract-de]
   pagebreak()
 
   let body-font = "New Computer Modern"
@@ -122,7 +127,7 @@
   pagebreak()
 
   // List of acronyms
-  include "template/config/acronyms.typ"
+  acronyms
   abbr.list(title: "List of acronyms")
 
   pagebreak()
@@ -137,26 +142,27 @@
 
   body
 
-  pagebreak()
-  bibliography("template/thesis.bib")
+  if show-fig-list {
+    // List of figures.
+    pagebreak()
+    heading(numbering: none)[List of Figures]
+    outline(
+      title:"",
+      target: figure.where(kind: image),
+    )
+  }
 
-  // List of figures.
-  pagebreak()
-  heading(numbering: none)[List of Figures]
-  outline(
-    title:"",
-    target: figure.where(kind: image),
-  )
-
-  // List of tables.
-  pagebreak()
-  heading(numbering: none)[List of Tables]
-  outline(
-    title: "",
-    target: figure.where(kind: table)
-  )
+  if show-tab-list {
+    // List of tables.
+    pagebreak()
+    heading(numbering: none)[List of Tables]
+    outline(
+      title: "",
+      target: figure.where(kind: table)
+    )
+  }
 
   // Appendix.
   pagebreak()
-  include("template/texts/appendix.typ")
+  appendix
 }
