@@ -1,5 +1,4 @@
 #let disclaimer(
-  title: "",
   degree: "",
   author: "",
   submission-date: datetime,
