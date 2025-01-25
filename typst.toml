@@ -6,6 +6,7 @@ authors = ["Falko Hemstra"]
 license = "MIT"
 description = "A minimalistic template for writing a thesis."
 categories = ["thesis"]
+repository = "https://github.com/fhemstra/minimal-thesis-luebeck"
 
 [template]
 path = "template"
