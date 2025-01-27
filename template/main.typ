@@ -3,6 +3,11 @@
 #import "utils/print-page-break.typ": print-page-break
 #import "texts/metadata.typ": *
 #import "utils/bib_state.typ": *
+#import "styles/acknowledgement.typ": *
+#import "styles/abstract.typ": *
+#import "styles/toc.typ": *
+#import "styles/disclaimer.typ": *
+#import "styles/titlepage.typ": *
 
 #set document(title: title-english, author: author)
 
@@ -48,7 +53,7 @@
 // #############################################
 
 // --- Title ---
-#include "texts/titlepage.typ"
+#titlepage()
 #print-page-break(print: is-print, to: "even")
 
 // --- Disclaimer ---
@@ -57,19 +62,36 @@
   numbering: "i",
   number-align: center,
 )
-#include "texts/disclaimer.typ"
+#disclaimer([
+  Eidesstattliche Erklärung
+
+  Ich erkläre hiermit an Eides statt, dass ich diese Arbeit selbständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+])
 #print-page-break(print: is-print)
 
 // --- Acknowledgement ---
-#include "texts/acknowledgement.typ"
+#acknowledgement([
+  Write your acknowledgement here or leave it out if you do not want one.
+  #lorem(50)
+])
 #print-page-break(print: is-print)
 
 // --- Abstract ---
-#include "texts/abstract.typ"
+#v(1fr) // these insert 1 fraction of vertical space
+#abstract(title: "Abstract", language: "en", [
+  Write your english abstract here.
+  #lorem(80)
+])
+#v(1fr)
+#abstract(title: "Zusammenfassung", language: "de", [
+  Schreibe deine deutsche Zusammenfassung hier.
+  #lorem(80)
+])
+#v(1fr)
 #pagebreak()
 
 // --- Table of contents ---
-#include "texts/toc.typ"
+#toc()
 #pagebreak()
 
 // --- List of acronyms ---
@@ -109,4 +131,8 @@
 
 // --- Appendix ---
 #pagebreak()
-#include "texts/appendix.typ"
+#set heading(numbering: none)
+
+= Appendix
+If you need one, write your appendix here.
+#lorem(100)
