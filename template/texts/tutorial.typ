@@ -1,4 +1,4 @@
-#import "../utils/todo.typ": TODO
+#import "../../utils/todo.typ": TODO
 #import "@preview/abbr:0.1.1"
 
 #set heading(numbering: "1.1")
@@ -106,7 +106,7 @@ def main():
 However, this is not well-suited for large pieces of code.
 
 // This is just a workaround for the bib
-#import "../utils/bib_state.typ": bib_state
+#import "../../utils/bib_state.typ": bib_state
 #context[
   #bib_state.at(<sec:tutorial>)
 ]

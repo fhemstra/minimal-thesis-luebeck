@@ -1,6 +1,21 @@
-#import "../texts/metadata.typ": *
-
-#let titlepage() = {
+#let titlepage(
+  top-left-img,
+  top-right-img,
+  title-english,
+  title-german,
+  degree,
+  institute,
+  program,
+  university,
+  company,
+  author,
+  supervisor,
+  advisor,
+  place,
+  submission-date,
+  slogan-img,
+  sans-font
+) = {
   set page(
     margin: (left: 20mm, right: 20mm, top: 20mm, bottom: 30mm),
     numbering: none,

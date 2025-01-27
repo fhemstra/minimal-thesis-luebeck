@@ -1,6 +1,8 @@
-#import "../texts/metadata.typ": *
-
-#let acknowledgement(body) = {
+#let acknowledgement(
+  body-font,
+  sans-font,
+  body
+) = {
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
     number-align: center,

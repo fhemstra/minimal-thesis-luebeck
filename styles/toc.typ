@@ -1,7 +1,5 @@
-#import "../texts/metadata.typ": *
-
 // --- Table of Contents ---
-#let toc() = {
+#let toc(body-font, sans-font) = {
   // Make chapter bold but only in the TOC
   show outline.entry.where(
     level: 1

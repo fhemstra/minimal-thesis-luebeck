@@ -1,8 +1,7 @@
-#import "../texts/metadata.typ": *
-
 #let abstract(
   title: "Abstract",
   language: "en",
+  body-font,
   body
 ) = {
   set text(
