@@ -13,7 +13,7 @@
   title-german: none,
   author: none,
   degree: none,
-  submission-date: none,
+  submission-date: datetime.today(),
   institute: none,
   program: none,
   company: none,
@@ -30,9 +30,11 @@
   abstract-de: none,
   abbreviations: none,
   bib-file: none,
-  is-print: none,
   body-font: none,
   sans-font: none,
+  is-print: false,
+  make-list-of-figures: false,
+  make-list-of-tables: false,
   body
 ) = {
   set document(title: title-english, author: author)
@@ -79,22 +81,22 @@
 
   // --- Title ---
   titlepage(
-    top-left-img,
-    top-right-img,
-    title-english,
-    title-german,
-    degree,
-    institute,
-    program,
-    university,
-    company,
-    author,
-    supervisor,
-    advisor,
-    place,
-    submission-date,
-    slogan-img,
-    sans-font
+    top-left-img: top-left-img,
+    top-right-img: top-right-img,
+    title-english: title-english,
+    title-german: title-german,
+    degree: degree,
+    institute: institute,
+    program: program,
+    university: university,
+    company: company,
+    author: author,
+    supervisor: supervisor,
+    advisor: advisor,
+    place: place,
+    submission-date: submission-date,
+    slogan-img: slogan-img,
+    sans-font: sans-font
   )
   print-page-break(print: is-print, to: "even")
 
@@ -147,21 +149,25 @@
   pagebreak()
   bib-file
 
-  // --- List of figures ---
-  pagebreak()
-  heading(numbering: none)[List of Figures]
-  outline(
-    title:"",
-    target: figure.where(kind: image),
-  )
+  if make-list-of-figures {
+    // --- List of figures ---
+    pagebreak()
+    heading(numbering: none)[List of Figures]
+    outline(
+      title:"",
+      target: figure.where(kind: image),
+    )
+  }
 
   // --- List of tables ---
-  pagebreak()
-  heading(numbering: none)[List of Tables]
-  outline(
-    title: "",
-    target: figure.where(kind: table)
-  )
+  if make-list-of-tables {
+    pagebreak()
+    heading(numbering: none)[List of Tables]
+    outline(
+      title: "",
+      target: figure.where(kind: table)
+    )
+  }
 
   if appendix != none {
     // --- Appendix ---
