@@ -1,5 +1,5 @@
 #import "../../utils/todo.typ": TODO
-#import "@preview/abbr:0.1.1"
+#import "@preview/acrotastic:0.1.1": *
 
 #set heading(numbering: "1.1")
 
@@ -54,9 +54,9 @@ In Typst, math symbols are written differently than in LaTeX. For instance, many
 - Relations: $<$, $>$, $!=$, $approx$
 - Functions: $sin$, $cos$, $tan$, $log$, $exp$
 
-== Acronyms
-Typst supports acronyms like this: #abbr.pla[PDE] are important in mathematics.\
-Note that a list of all acronyms shall be written in `texts/acronyms.typ`.
+== Abbreviations
+Typst supports abbreviations like this: #acr("PDE") are important in mathematics.\
+Note that a list of all abbreviations shall be written in `texts/abbreviations.typ`.
 
 == Enumerations and bullet points
 Enumerations are written like this:

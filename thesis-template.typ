@@ -1,4 +1,4 @@
-#import "@preview/abbr:0.1.1"
+#import "@preview/acrotastic:0.1.1": *
 #import "utils/todo.typ": TODO
 #import "utils/print-page-break.typ": print-page-break
 #import "utils/bib_state.typ": *
@@ -28,7 +28,7 @@
   appendix: none,
   abstract-en: none,
   abstract-de: none,
-  acronyms: none,
+  abbreviations: none,
   bib-file: none,
   is-print: none,
   body-font: none,
@@ -50,7 +50,6 @@
   // Headings
   show heading: set block(below: 0.85em, above: 1.75em)
   show heading: set text(font: sans-font)
-  set heading(numbering: "1.1")
   // Reference first-level headings as "chapters"
   show ref: it => {
     let el = it.element
@@ -128,9 +127,9 @@
   toc(body-font, sans-font)
   pagebreak()
 
-  // --- List of acronyms ---
-  acronyms
-  abbr.list(title: "List of acronyms")
+  // --- List of abbreviations ---
+  abbreviations
+  print-index(outlined: false, level: 1)
   pagebreak()
 
   // --- Main body ---
@@ -140,6 +139,7 @@
   )
   // start at page 1 again
   counter(page).update(1)
+  set heading(numbering: "1.1")
 
   body
 

@@ -1,4 +1,3 @@
-#import "@preview/abbr:0.1.1"
 #import "../thesis-template.typ": *
 
 #let title-english = "Towards Smart Inventions and their Novelty"
@@ -18,7 +17,7 @@
 #let slogan-img = image("images/slogan.png")
 #let acknowledgement-text = include "texts/acknowledgement.typ"
 #let appendix = include "texts/appendix.typ"
-#let acronyms = include "texts/acronyms.typ"
+#let abbreviations = include "texts/abbreviations.typ"
 #let abstract-en = include "texts/abstract-en.typ"
 #let abstract-de = include "texts/abstract-de.typ"
 #let bib-file = bibliography("thesis.bib")
@@ -46,7 +45,7 @@
   appendix: appendix,
   abstract-en: abstract-en,
   abstract-de: abstract-de,
-  acronyms: acronyms,
+  abbreviations: abbreviations,
   bib-file: bib-file,
   is-print: is-print,
   body-font: body-font,
