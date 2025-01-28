@@ -1,4 +1,3 @@
-#import "../../utils/todo.typ": TODO
 #import "@preview/abbr:0.1.1"
 
 #set heading(numbering: "1.1")
@@ -28,7 +27,7 @@ Unlike LaTeX, Typst does not have floating figures. Instead, figures are placed 
 Also, Typst currently cannot embed PDF-files. However, you can still use SVG.
 
 == Citations and references
-Citations are referenced like this: @alley1996craft is a great book about writing scientific reports.\
+Citations are referenced like this: `@alley1996craft` is a great book about writing scientific reports (proper citations sadly do not work in this tutorial).\
 Note that the bibliography tag stems from the `thesis.bib` file.\
 Also, sections can be referenced like this: @sec:figures and @sec:tutorial
 
@@ -104,9 +103,3 @@ def main():
   print("Hello Typst!")
 ```
 However, this is not well-suited for large pieces of code.
-
-// This is just a workaround for the bib
-#import "../../utils/bib_state.typ": bib_state
-#context[
-  #bib_state.at(<sec:tutorial>)
-]

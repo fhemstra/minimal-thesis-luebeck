@@ -1,7 +1,6 @@
 #import "@preview/abbr:0.1.1":
 #import "utils/todo.typ": TODO
 #import "utils/print-page-break.typ": print-page-break
-#import "utils/bib_state.typ": *
 #import "styles/acknowledgement.typ": *
 #import "styles/abstract.typ": *
 #import "styles/toc.typ": *
@@ -73,8 +72,6 @@
   set cite(style: "alphanumeric")
   // Figures
   show figure: set text(size: 0.85em)
-  // Bibliography
-  bib_state.update(none)
   // #############################################
   // ############## End of Settings ##############
   // #############################################

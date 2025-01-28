@@ -33,7 +33,7 @@
 
 = Fist Chapter
 #TODO[
-  Write your thesis here! Just start typing.
+  Write your thesis here! Just start typing (and citing: @alley1996craft).
 ]
 
 // You can remove this when you are done looking at the examples.
