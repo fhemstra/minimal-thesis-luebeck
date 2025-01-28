@@ -1,4 +1,4 @@
-#import "@preview/acrotastic:0.1.1": *
+#import "@preview/abbr:0.1.1":
 #import "utils/todo.typ": TODO
 #import "utils/print-page-break.typ": print-page-break
 #import "utils/bib_state.typ": *
@@ -130,9 +130,10 @@
   pagebreak()
 
   // --- List of abbreviations ---
-  abbreviations
-  print-index(outlined: false, level: 1)
-  pagebreak()
+  if abbreviations != none {
+    abbreviations
+    pagebreak()
+  }
 
   // --- Main body ---
   set par(justify: true, first-line-indent: 2em)

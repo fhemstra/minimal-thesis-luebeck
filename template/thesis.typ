@@ -1,3 +1,4 @@
+// #import "@preview/minimal-thesis-luebeck:0.2.0": *
 #import "../thesis-template.typ": *
 
 #show: thesis.with(
