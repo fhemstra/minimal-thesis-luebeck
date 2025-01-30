@@ -70,8 +70,6 @@
   show math.equation: set text(weight: 400)
   // Paragraphs
   set par(leading: 1em)
-  // Citations
-  set cite(style: "alphanumeric")
   // Figures
   show figure: set text(size: 0.85em)
   // #############################################
