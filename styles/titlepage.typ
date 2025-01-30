@@ -14,6 +14,8 @@
   place: none,
   submission-date: none,
   slogan-img: none,
+  dark-color: black,
+  light-color: gray,
   sans-font: none
 ) = {
   set page(
@@ -37,9 +39,9 @@
   )
   v(5mm)
 
-  align(center, text(2em, strong(title-english)))
+  align(center, text(2em, strong(title-english), fill: dark-color))
 
-  align(center, text(2em, title-german))
+  align(center, text(2em, title-german, fill: dark-color))
   v(15mm)
 
   align(left, text(weight: "bold",

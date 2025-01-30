@@ -1,6 +1,7 @@
 #let acknowledgement(
-  body-font,
-  sans-font,
+  body-font: "",
+  sans-font: "",
+  dark-color: black,
   body
 ) = {
   set page(
@@ -20,7 +21,7 @@
   )
 
   // --- Acknowledgements ---
-  align(left, text(font: sans-font, 2em, weight: 700,"Acknowledgements"))
+  align(left, text(font: sans-font, 2em, weight: 700,"Acknowledgements", fill: dark-color))
   v(15mm)
 
   body

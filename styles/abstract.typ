@@ -1,7 +1,8 @@
 #let abstract(
   title: "Abstract",
   language: "en",
-  body-font,
+  body-font: "",
+  dark-color: black,
   body
 ) = {
   set text(
@@ -14,7 +15,7 @@
   )
   set text(lang: language)
 
-  align(center, text(font: body-font, 1em, weight: "semibold", title))
+  align(center, text(font: body-font, 1em, weight: "semibold", fill: dark-color, title))
 
   body
 }

@@ -26,11 +26,12 @@
   bib-file: bibliography("thesis.bib"),
   body-font: "New Computer Modern",
   sans-font: "New Computer Modern Sans",
+  dark-color: rgb(0,39,102),
+  light-color: rgb(0,145,247),
   is-print: false,
   make-list-of-figures: false,
   make-list-of-tables: false
 )
-
 
 = Fist Chapter
 #TODO[

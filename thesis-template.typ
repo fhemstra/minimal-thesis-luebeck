@@ -31,6 +31,8 @@
   bib-file: none,
   body-font: none,
   sans-font: none,
+  dark-color: black,
+  light-color: gray,
   is-print: false,
   make-list-of-figures: false,
   make-list-of-tables: false,
@@ -50,7 +52,7 @@
   )
   // Headings
   show heading: set block(below: 0.85em, above: 1.75em)
-  show heading: set text(font: sans-font)
+  show heading: set text(font: sans-font, fill: dark-color)
   // Reference first-level headings as "chapters"
   show ref: it => {
     let el = it.element
@@ -93,6 +95,8 @@
     place: place,
     submission-date: submission-date,
     slogan-img: slogan-img,
+    dark-color: dark-color,
+    light-color: light-color,
     sans-font: sans-font
   )
   print-page-break(print: is-print, to: "even")
@@ -111,20 +115,42 @@
   print-page-break(print: is-print)
 
   // --- Acknowledgement ---
-  acknowledgement(body-font, sans-font, acknowledgement-text)
+  acknowledgement(body-font: body-font, sans-font: sans-font, dark-color: dark-color, acknowledgement-text)
   print-page-break(print: is-print)
 
   // --- Abstract ---
   v(0.5fr) // these insert fractions of vertical space
-  abstract(title: "Abstract", language: "en", body-font, abstract-en)
+  abstract(title: "Abstract", language: "en", body-font: body-font, dark-color: dark-color, abstract-en)
   v(1fr)
-  abstract(title: "Zusammenfassung", language: "de", body-font, abstract-de)
+  abstract(title: "Zusammenfassung", language: "de", body-font: body-font, dark-color: dark-color, abstract-de)
   v(1fr)
   pagebreak()
 
   // --- Table of contents ---
-  toc(body-font, sans-font)
+  toc(body-font: body-font, sans-font: sans-font, dark-color: dark-color)
   pagebreak()
+
+  // Turn off heading numbers and outline for now
+  set heading(numbering: none, bookmarked: true, outlined: false)
+  // --- List of figures ---
+  if make-list-of-figures {
+    heading[List of Figures]
+    outline(
+      title:"",
+      target: figure.where(kind: image),
+    )
+    pagebreak()
+  }
+
+  // --- List of tables ---
+  if make-list-of-tables {
+    heading[List of Tables]
+    outline(
+      title: "",
+      target: figure.where(kind: table)
+    )
+    pagebreak()
+  }
 
   // --- List of abbreviations ---
   if abbreviations != none {
@@ -139,33 +165,13 @@
   )
   // start at page 1 again
   counter(page).update(1)
-  set heading(numbering: "1.1")
+  set heading(numbering: "1.1", bookmarked: true, outlined: true)
 
   body
 
   // --- Bibliography ---
   pagebreak()
   bib-file
-
-  if make-list-of-figures {
-    // --- List of figures ---
-    pagebreak()
-    heading(numbering: none)[List of Figures]
-    outline(
-      title:"",
-      target: figure.where(kind: image),
-    )
-  }
-
-  // --- List of tables ---
-  if make-list-of-tables {
-    pagebreak()
-    heading(numbering: none)[List of Tables]
-    outline(
-      title: "",
-      target: figure.where(kind: table)
-    )
-  }
 
   if appendix != none {
     // --- Appendix ---

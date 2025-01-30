@@ -1,11 +1,15 @@
 // --- Table of Contents ---
-#let toc(body-font, sans-font) = {
+#let toc(
+  body-font: "",
+  sans-font: "",
+  dark-color: black
+) = {
   // Make chapter bold but only in the TOC
   show outline.entry.where(
     level: 1
   ): it => {
     v(12pt, weak: true)
-    strong(text(it, font: sans-font))
+    strong(text(it, font: sans-font, fill: dark-color))
   }
 
   outline(
