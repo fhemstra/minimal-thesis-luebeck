@@ -1,4 +1,4 @@
-#import "@preview/abbr:0.1.1"
+#import "@preview/abbr:0.2.1"
 
 #set heading(numbering: "1.1")
 
