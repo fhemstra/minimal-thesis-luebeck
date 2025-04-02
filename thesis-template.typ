@@ -47,7 +47,7 @@
   let sans-font = "New Computer Modern Sans"
   set text(
     font: body-font, 
-    size: 12pt, 
+    size: 11pt, 
     lang: "en"
   )
   // Headings
@@ -71,7 +71,7 @@
   // Paragraphs
   set par(leading: 1em)
   // Figures
-  show figure: set text(size: 0.85em)
+  show figure: set text(size: 11pt)
   // #############################################
   // ############## End of Settings ##############
   // #############################################

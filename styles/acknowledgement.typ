@@ -11,7 +11,7 @@
 
   set text(
     font: body-font, 
-    size: 12pt, 
+    size: 11pt, 
     lang: "en"
   )
 

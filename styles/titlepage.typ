@@ -25,7 +25,7 @@
   )
   set text(
     font: sans-font, 
-    size: 12pt, 
+    size: 11pt, 
     lang: "en"
   )
   set par(leading: 0.5em)
@@ -37,11 +37,11 @@
     top-left-img,
     top-right-img
   )
-  v(5mm)
+  v(10mm)
 
-  align(center, text(2em, strong(title-english), fill: dark-color))
+  align(left, text(16pt, strong(title-english), fill: dark-color))
 
-  align(center, text(2em, title-german, fill: dark-color))
+  align(left, text(16pt, title-german, fill: dark-color))
   v(15mm)
 
   align(left, text(weight: "bold",
