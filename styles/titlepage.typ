@@ -53,7 +53,7 @@
   align(left, "im Rahmen des Studiengangs\n" + strong(program) + "\nder " + university)
 
   if company != none {
-    align(left, "im Rahmen einer Tätitgkeit bei der Firma\n" + strong(company))
+    align(left, "im Rahmen einer Tätigkeit bei der Firma\n" + strong(company))
   }
 
   align(left, "vorgelegt von\n" + strong(author))
