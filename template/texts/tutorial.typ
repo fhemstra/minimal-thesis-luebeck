@@ -5,14 +5,18 @@
 = Example Section <sec:tutorial>
 This section contains some example content to show you how to use Typst to write your thesis.
 
+Also, Typst is well-documented. Visit the documentation online: #link("https://typst.app/docs/reference/model/link/")
+
 == Bold and Italic font
 In Typst, you can write text in *bold* or _italic_ font by using simple Markdown symbols.
 
-== Line breaks
+== Line breaks and page breaks
 By leaving a line blank in your `.typ`-file, you can create a new *paragraph*. This should be the default way of structuring your text. In LaTeX, this would be `\par`.
 
 You can also create a simple line break by adding a backslash `\` at the end of a line.\
-This is usually not recommended.
+However, since line breaks should be consistent throughout the document, breaking using `\` is usually not recommended.
+
+To insert a pagebreak use `#pagebreak()`.
 
 == Figures <sec:figures>
 Figures are referenced like this: @fig:findus shows a funny cat.

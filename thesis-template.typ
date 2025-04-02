@@ -72,6 +72,8 @@
   set par(leading: 1em)
   // Figures
   show figure: set text(size: 11pt)
+  // Links
+  show link: underline
   // #############################################
   // ############## End of Settings ##############
   // #############################################
