@@ -22,6 +22,7 @@
   appendix: include "texts/appendix.typ",
   abstract-en: include "texts/abstract-en.typ",
   abstract-de: include "texts/abstract-de.typ",
+  confidentiality-notice: include "texts/confidentiality-notice.typ",
   abbreviations: include "texts/abbreviations.typ",
   bib-file: bibliography("thesis.bib"),
   body-font: "New Computer Modern",

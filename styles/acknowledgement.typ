@@ -21,8 +21,7 @@
   )
 
   // --- Acknowledgements ---
-  align(left, text(font: sans-font, 2em, weight: 700,"Acknowledgements", fill: dark-color))
-  v(15mm)
+  heading("Acknowledgements", outlined: false)
 
   body
 }

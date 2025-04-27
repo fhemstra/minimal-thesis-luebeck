@@ -27,6 +27,7 @@
   appendix: none,
   abstract-en: none,
   abstract-de: none,
+  confidentiality-notice: none,
   abbreviations: none,
   bib-file: none,
   body-font: none,
@@ -114,6 +115,13 @@
   ])
   print-page-break(print: is-print)
 
+  // --- Confidentiality notice ---
+  if confidentiality-notice != none {
+    heading("Sperrvermerk", outlined: false)
+    confidentiality-notice
+    print-page-break(print: is-print)
+  }
+
   // --- Acknowledgement ---
   acknowledgement(body-font: body-font, sans-font: sans-font, dark-color: dark-color, acknowledgement-text)
   print-page-break(print: is-print)
@@ -175,8 +183,9 @@
 
   if appendix != none {
     // --- Appendix ---
-    pagebreak()
     set heading(numbering: none)
+    pagebreak()
+    heading("Appendix")
 
     appendix
   }

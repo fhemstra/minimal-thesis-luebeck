@@ -15,7 +15,7 @@
   )
   set text(lang: language)
 
-  align(center, text(font: body-font, 1em, weight: "semibold", fill: dark-color, title))
+  heading(title, outlined: false)
 
   body
 }
