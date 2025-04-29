@@ -69,6 +69,14 @@
   }
   // Math
   show math.equation: set text(weight: 400)
+  // Count headings and number equations
+  show heading.where(level: 1): it => {
+    counter(math.equation).update(0)
+    it
+  }
+  set math.equation(numbering: num =>
+    numbering("(1.1)", counter(heading).get().first(), num)
+  )
   // Paragraphs
   set par(leading: 1em)
   // Figures
@@ -185,6 +193,7 @@
     // --- Appendix ---
     set heading(numbering: none)
     pagebreak()
+    set math.equation(numbering: "(1)")
     heading("Appendix")
 
     appendix
