@@ -10,6 +10,7 @@
 #let thesis(
   title-english: none,
   title-german: none,
+  language: "en",
   author: none,
   degree: none,
   submission-date: datetime.today(),
@@ -49,7 +50,7 @@
   set text(
     font: body-font, 
     size: 11pt, 
-    lang: "en"
+    lang: language
   )
   // Heading style
   show heading: set block(below: 0.85em, above: 1.75em)
@@ -140,9 +141,18 @@
 
   // --- Abstract ---
   v(0.5fr) // these insert fractions of vertical space
-  abstract(title: "Abstract", language: "en", body-font: body-font, dark-color: dark-color, abstract-en)
-  v(1fr)
-  abstract(title: "Zusammenfassung", language: "de", body-font: body-font, dark-color: dark-color, abstract-de)
+  context {
+    let lang = text.lang
+    if lang == "de" {
+      abstract(title: "Zusammenfassung", body-font: body-font, dark-color: dark-color, abstract-de)
+      v(1fr)
+      abstract(title: "Abstract", body-font: body-font, dark-color: dark-color, abstract-en)
+    } else {
+      abstract(title: "Abstract", body-font: body-font, dark-color: dark-color, abstract-en)
+      v(1fr)
+      abstract(title: "Zusammenfassung", body-font: body-font, dark-color: dark-color, abstract-de)
+    }
+  }
   v(1fr)
   pagebreak()
 
@@ -154,21 +164,37 @@
   set heading(numbering: none, bookmarked: true, outlined: false)
   // --- List of figures ---
   if make-list-of-figures {
-    heading[List of Figures]
-    outline(
-      title:"",
-      target: figure.where(kind: image),
-    )
+    context {
+      let lang = text.lang
+      let fig-title = ""
+      if lang == "de" {
+        fig-title = "Abbildungsverzeichnis"
+      } else {
+        fig-title = "List of Figures"
+      }
+      outline(
+        title: fig-title,
+        target: figure.where(kind: image),
+      )
+    }
     pagebreak()
   }
 
   // --- List of tables ---
   if make-list-of-tables {
-    heading[List of Tables]
-    outline(
-      title: "",
-      target: figure.where(kind: table)
-    )
+    context {
+      let lang = text.lang
+      let fig-title = ""
+      if lang == "de" {
+        fig-title = "Tabellenverzeichnis"
+      } else {
+        fig-title = "List of Tables"
+      }
+      outline(
+        title: fig-title,
+        target: figure.where(kind: table),
+      )
+    }
     pagebreak()
   }
 

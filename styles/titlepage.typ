@@ -25,8 +25,7 @@
   )
   set text(
     font: sans-font, 
-    size: 11pt, 
-    lang: "en"
+    size: 11pt
   )
   set par(leading: 0.5em)
 
@@ -39,14 +38,19 @@
   )
   v(10mm)
 
-  align(left, text(16pt, strong(title-english), fill: dark-color))
+  context {
+    let lang = text.lang
+    if lang == "de" {
+      align(left, text(16pt, strong(title-german), fill: dark-color))
+      align(left, text(16pt, title-english, fill: dark-color))
+      align(left, text(weight: "bold", degree + "arbeit"))
+    } else {
+      align(left, text(16pt, strong(title-english), fill: dark-color))
+      align(left, text(16pt, title-german, fill: dark-color))
+      align(left, text(weight: "bold", degree + "’s Thesis"))
+    }
 
-  align(left, text(16pt, title-german, fill: dark-color))
-  v(15mm)
-
-  align(left, text(weight: "bold",
-  degree + "’s Thesis"
-  ))
+  }
 
   align(left, "verfasst am\n" + strong(institute))
 

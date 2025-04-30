@@ -7,4 +7,16 @@
 )
 #let char(null) = {sym.space.nobreak}
 #abbr.config(space-char: char)
-#abbr.list()
+
+#context {
+  let lang = text.lang
+  let abbr-title = ""
+  if lang == "de" {
+    abbr-title = "Abkürzungsverzeichnis"
+  } else {
+    abbr-title = "List of Abbreviations"
+  }
+  abbr.list(
+    title: abbr-title
+  )
+}

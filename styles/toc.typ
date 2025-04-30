@@ -4,7 +4,7 @@
   sans-font: "",
   dark-color: black
 ) = {
-  // Make chapter bold but only in the TOC
+  // Make chapters bold but only in the TOC
   show outline.entry.where(
     level: 1
   ): it => {
@@ -12,11 +12,21 @@
     strong(text(it, font: sans-font, fill: dark-color))
   }
 
-  outline(
-    title: {
-      text(font: sans-font, "Contents")
-      // v(15mm)
-    },
-    indent: 2em
-  )
+  context {
+    let lang = text.lang
+    let x = ""
+    if lang == "de" {
+      x = "Inhaltsverzeichnis"
+    } else {
+      x = "Contents"
+    }
+    // Set the title of the TOC
+    outline(
+      title: {
+        text(font: sans-font, x)
+      },
+      indent: 2em
+    )
+  }
+
 }

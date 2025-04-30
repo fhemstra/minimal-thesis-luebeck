@@ -5,8 +5,9 @@
 #show: thesis.with(
   title-english: "Towards Smart Inventions and their Novelty",
   title-german: "Über schlaue Erfindungen und deren Neuartigkeit",
+  language: "en", // use "de" for german documents
   author: "Findus",
-  degree: "Master",
+  degree: "Master", // or "Bachelor"
   submission-date: datetime.today(), // or use: datetime(day: 1, month: 1, year: 2025)
   institute: "Institut für schlaue Erfindungen",
   program: "Tüfteln und Basteln",

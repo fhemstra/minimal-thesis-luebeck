@@ -11,8 +11,7 @@
 
   set text(
     font: body-font, 
-    size: 11pt, 
-    lang: "en"
+    size: 11pt
   )
 
   set par(
@@ -21,7 +20,14 @@
   )
 
   // --- Acknowledgements ---
-  heading("Acknowledgements", outlined: false)
+  context {
+    let lang = text.lang
+    if lang == "de" {
+      heading("Danksagung", outlined: false)
+    } else {
+      heading("Acknowledgements", outlined: false)
+    }
+  }
 
   body
 }
