@@ -51,9 +51,13 @@
     size: 11pt, 
     lang: "en"
   )
-  // Headings
+  // Heading style
   show heading: set block(below: 0.85em, above: 1.75em)
   show heading: set text(font: sans-font, fill: dark-color)
+  // Heading outline and numbers
+  show heading.where(level: 4): set heading(outlined: false, numbering: none)
+  show heading.where(level: 5): set heading(outlined: false, numbering: none)
+  show heading.where(level: 6): set heading(outlined: false, numbering: none)
   // Reference first-level headings as "chapters"
   show ref: it => {
     let el = it.element
