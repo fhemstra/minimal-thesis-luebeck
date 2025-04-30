@@ -31,8 +31,8 @@
   confidentiality-notice: none,
   abbreviations: none,
   bib-file: none,
-  body-font: none,
-  sans-font: none,
+  body-font: "New Computer Modern",
+  sans-font: "New Computer Modern Sans",
   dark-color: black,
   light-color: gray,
   is-print: false,
@@ -45,8 +45,6 @@
   // #############################################
   // ################# Settings ##################
   // #############################################
-  let body-font = "New Computer Modern"
-  let sans-font = "New Computer Modern Sans"
   set text(
     font: body-font, 
     size: 11pt, 
@@ -136,7 +134,7 @@
   }
 
   // --- Acknowledgement ---
-  acknowledgement(body-font: body-font, sans-font: sans-font, dark-color: dark-color, acknowledgement-text)
+  acknowledgement(dark-color: dark-color, acknowledgement-text)
   print-page-break(print: is-print)
 
   // --- Abstract ---
@@ -144,13 +142,13 @@
   context {
     let lang = text.lang
     if lang == "de" {
-      abstract(title: "Zusammenfassung", body-font: body-font, dark-color: dark-color, abstract-de)
+      abstract(title: "Zusammenfassung", dark-color: dark-color, abstract-de)
       v(1fr)
-      abstract(title: "Abstract", body-font: body-font, dark-color: dark-color, abstract-en)
+      abstract(title: "Abstract", dark-color: dark-color, abstract-en)
     } else {
-      abstract(title: "Abstract", body-font: body-font, dark-color: dark-color, abstract-en)
+      abstract(title: "Abstract", dark-color: dark-color, abstract-en)
       v(1fr)
-      abstract(title: "Zusammenfassung", body-font: body-font, dark-color: dark-color, abstract-de)
+      abstract(title: "Zusammenfassung", dark-color: dark-color, abstract-de)
     }
   }
   v(1fr)

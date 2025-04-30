@@ -1,17 +1,10 @@
 #let acknowledgement(
-  body-font: "",
-  sans-font: "",
   dark-color: black,
   body
 ) = {
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
     number-align: center,
-  )
-
-  set text(
-    font: body-font, 
-    size: 11pt
   )
 
   set par(

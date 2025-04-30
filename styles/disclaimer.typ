@@ -1,5 +1,4 @@
 #let disclaimer(
-  body-font,
   author,
   body
 ) = {
@@ -7,10 +6,6 @@
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
     numbering: "i",
     number-align: center,
-  )
-  set text(
-    font: body-font, 
-    size: 11pt
   )
 
   // --- Disclaimer ---  
