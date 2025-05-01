@@ -119,7 +119,7 @@
     numbering: "i",
     number-align: center,
   )
-  disclaimer(body-font, author, [
+  disclaimer(author, [
     Eidesstattliche Erklärung
 
     Ich erkläre hiermit an Eides statt, dass ich diese Arbeit selbständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
