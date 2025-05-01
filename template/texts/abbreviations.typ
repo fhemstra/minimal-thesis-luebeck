@@ -1,12 +1,11 @@
-#import "@preview/abbr:0.2.1"
+#import "@preview/abbr:0.2.3"
 
 #abbr.make(
   ("PDE", "Partial Differential Equation"),
   ("BC", "Boundary Condition"),
   ("DOF", "Degree of Freedom", "Degrees of Freedom"),
 )
-#let char(null) = {sym.space.nobreak}
-#abbr.config(space-char: char)
+#abbr.config(space-char: sym.space.nobreak)
 
 #context {
   let lang = text.lang

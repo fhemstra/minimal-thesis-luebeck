@@ -1,6 +1,6 @@
 // #import "@preview/minimal-thesis-luebeck:0.3.0": *
 #import "../thesis-template.typ": *
-#import "@preview/abbr:0.2.1"
+#import "@preview/abbr:0.2.3"
 
 #show: thesis.with(
   title-english: "Towards Smart Inventions and their Novelty",
