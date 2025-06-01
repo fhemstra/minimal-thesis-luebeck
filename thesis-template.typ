@@ -1,4 +1,5 @@
 #import "@preview/abbr:0.2.3":
+#import "@preview/hydra:0.6.1": hydra
 #import "utils/todo.typ": TODO
 #import "utils/print-page-break.typ": print-page-break
 #import "styles/acknowledgement.typ": *
@@ -207,6 +208,10 @@
   set page(
     numbering: "1",
   )
+  // start showing chapter in header
+  set page(header: context {
+    align(right, emph(hydra(2)))
+  })
   // start at page 1 again
   counter(page).update(1)
   set heading(numbering: "1.1", bookmarked: true, outlined: true)
