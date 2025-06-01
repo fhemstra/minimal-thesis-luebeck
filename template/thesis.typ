@@ -26,8 +26,6 @@
   confidentiality-notice: include "texts/confidentiality-notice.typ",
   abbreviations: include "texts/abbreviations.typ",
   bib-file: bibliography("thesis.bib"),
-  body-font: "New Computer Modern",
-  sans-font: "New Computer Modern Sans",
   dark-color: rgb(0,39,102),
   light-color: rgb(0,145,247),
   is-print: false,
