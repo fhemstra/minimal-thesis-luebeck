@@ -85,6 +85,24 @@
   set math.equation(numbering: num =>
     numbering("(1.1)", counter(heading).get().first(), num)
   )
+  // Adjust figure numbering
+  set figure(numbering: num =>
+    numbering("1.1", counter(heading).get().first(), num)
+  )
+  show figure.caption: it => {
+    let pattern = "^[^:]+" + sym.space.nobreak + "[\d.]+"
+    show regex(pattern): set text(weight: "bold")
+    set align(left)
+    it
+    v(.25cm)
+  }
+  show heading.where(level: 1): it => {
+    counter(math.equation).update(0)
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(figure.where(kind: raw)).update(0)
+    it
+  }
   // Paragraphs
   set par(leading: 1em)
   // Figures
