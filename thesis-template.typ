@@ -55,6 +55,9 @@
   show heading: set block(below: 0.85em, above: 1.75em)
   show heading: set text(font: sans-font, fill: dark-color)
   // Heading outline and numbers
+  show heading.where(level: 1): set text(size: 26pt)
+  show heading.where(level: 2): set text(size: 15pt)
+  show heading.where(level: 3): set text(size: 13pt)
   show heading.where(level: 4): set heading(outlined: false, numbering: none)
   show heading.where(level: 5): set heading(outlined: false, numbering: none)
   show heading.where(level: 6): set heading(outlined: false, numbering: none)
