@@ -16,6 +16,6 @@
     abbr-title = "List of Abbreviations"
   }
   abbr.list(
-    title: abbr-title
+    title: text(abbr-title, size: 15pt)
   )
 }

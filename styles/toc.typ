@@ -14,16 +14,16 @@
 
   context {
     let lang = text.lang
-    let x = ""
+    let title_str = ""
     if lang == "de" {
-      x = "Inhaltsverzeichnis"
+      title_str = "Inhaltsverzeichnis"
     } else {
-      x = "Contents"
+      title_str = "Contents"
     }
     // Set the title of the TOC
     outline(
       title: {
-        text(font: sans-font, x)
+        text(font: sans-font, title_str, size: 15pt)
       },
       indent: 2em
     )

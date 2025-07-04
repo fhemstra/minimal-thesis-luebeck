@@ -16,9 +16,9 @@
   context {
     let lang = text.lang
     if lang == "de" {
-      heading("Danksagung", outlined: false)
+      heading("Danksagung", outlined: false, level: 2)
     } else {
-      heading("Acknowledgements", outlined: false)
+      heading("Acknowledgements", outlined: false, level: 2)
     }
   }
 

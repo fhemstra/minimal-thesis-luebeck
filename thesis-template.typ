@@ -55,7 +55,7 @@
   show heading: set block(below: 0.85em, above: 1.75em)
   show heading: set text(font: sans-font, fill: dark-color)
   // Heading outline and numbers
-  show heading.where(level: 1): set text(size: 26pt)
+  show heading.where(level: 1): set text(size: 22pt)
   show heading.where(level: 2): set text(size: 15pt)
   show heading.where(level: 3): set text(size: 13pt)
   show heading.where(level: 4): set heading(outlined: false, numbering: none)
@@ -154,7 +154,7 @@
 
   // --- Confidentiality notice ---
   if confidentiality-notice != none {
-    heading("Sperrvermerk", outlined: false)
+    heading("Sperrvermerk", outlined: false, level: 2)
     confidentiality-notice
     print-page-break(print: is-print)
   }
@@ -197,7 +197,7 @@
         fig-title = "List of Figures"
       }
       outline(
-        title: fig-title,
+        title: text(fig-title, size: 15pt),
         target: figure.where(kind: image),
       )
     }
@@ -215,7 +215,7 @@
         fig-title = "List of Tables"
       }
       outline(
-        title: fig-title,
+        title: text(fig-title, size: 15pt),
         target: figure.where(kind: table),
       )
     }

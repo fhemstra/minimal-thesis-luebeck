@@ -8,7 +8,7 @@
     justify: true
   )
 
-  heading(title, outlined: false)
+  heading(title, outlined: false, level: 2)
 
   body
 }
