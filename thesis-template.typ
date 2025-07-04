@@ -249,10 +249,18 @@
 
   if appendix != none {
     // --- Appendix ---
-    set heading(numbering: none)
     pagebreak()
-    set math.equation(numbering: "(1)")
+    // Set numbering for mathematical equations
+    let math-numbering(.., last) = "(A." + str(last) + ")"
+    set math.equation(numbering: math-numbering)
+    // Print the title
+    counter(heading).update(0)
+    set heading(numbering: "A.1.1")
     heading("Appendix")
+    // Update numbering for appendix headings
+    // Update figure numbering for appendix figures
+    let fig-numbering(.., last) = "A." + str(last)
+    set figure(numbering: fig-numbering)
 
     appendix
   }
