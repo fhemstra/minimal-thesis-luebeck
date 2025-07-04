@@ -94,10 +94,10 @@
   )
   show figure.caption: it => {
     let pattern = "^[^:]+" + sym.space.nobreak + "[\d.]+"
-    show regex(pattern): set text(weight: "bold")
+    show regex(pattern): set text(weight: "bold", style: "normal")
     set align(left)
-    it
-    v(.25cm)
+    text(it, style: "italic")
+    v(.5cm)
   }
   show heading.where(level: 1): it => {
     counter(math.equation).update(0)
@@ -235,7 +235,7 @@
   )
   // start showing chapter in header
   set page(header: context {
-    align(right, emph(hydra(2)))
+    align(center, emph(hydra(1, skip-starting: false)))
   })
   // start at page 1 again
   counter(page).update(1)
