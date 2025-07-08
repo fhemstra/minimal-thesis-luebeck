@@ -92,12 +92,15 @@
   set figure(numbering: num =>
     numbering("1.1", counter(heading).get().first(), num)
   )
+  // Figure captions shall be centered but the text shall be aligned left
   show figure.caption: it => {
     let pattern = "^[^:]+" + sym.space.nobreak + "[\d.]+"
     show regex(pattern): set text(weight: "bold", style: "normal")
-    set align(left)
-    text(it, style: "italic")
-    v(.5cm)
+    v(.2cm)
+    box(
+      align(left, text(it, style: "italic"))
+    )
+    v(.2cm)
   }
   show heading.where(level: 1): it => {
     counter(math.equation).update(0)
