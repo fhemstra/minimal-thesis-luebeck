@@ -88,17 +88,23 @@
   set math.equation(numbering: num =>
     numbering("(1.1)", counter(heading).get().first(), num)
   )
-  // Adjust figure numbering
-  set figure(numbering: num =>
+  // Set figure numbering and caption style 
+  let custom_numbering(.., num) = {
     numbering("1.1", counter(heading).get().first(), num)
+  }
+  set figure(numbering: num =>
+    custom_numbering(num)
   )
-  // Figure captions shall be centered but the text shall be aligned left
-  show figure.caption: it => {
-    let pattern = "^[^:]+" + sym.space.nobreak + "[\d.]+"
-    show regex(pattern): set text(weight: "bold", style: "normal")
+  // This is required for subfigures using the subpar package
+  show figure.caption: cap => context {
+    let fig_nr = cap.counter.get().first()
     v(.2cm)
-    box(
-      align(left, text(it, style: "italic"))
+    align(center,
+      box(
+        align(left)[
+          #text(weight: "bold", cap.supplement + " " + custom_numbering(fig_nr) + cap.separator)~#text(style: "italic", cap.body)
+        ]
+      )
     )
     v(.2cm)
   }
