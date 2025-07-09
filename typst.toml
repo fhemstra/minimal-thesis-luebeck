@@ -1,8 +1,8 @@
 [package]
 name = "minimal-thesis-luebeck"
-version = "0.5.0"
+version = "0.6.0"
 entrypoint = "thesis-template.typ"
-authors = ["Falko Hemstra"]
+authors = ["Falko Schick"]
 license = "MIT"
 description = "A minimalistic template for writing a thesis."
 categories = ["thesis"]
