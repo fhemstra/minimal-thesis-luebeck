@@ -97,12 +97,12 @@
   )
   // This is required for subfigures using the subpar package
   show figure.caption: cap => context {
-    let fig_nr = cap.counter.get().first()
+    let cap-number = context cap.counter.display(cap.numbering)
     v(.2cm)
     align(center,
       box(
         align(left)[
-          #text(weight: "bold", cap.supplement + " " + custom_numbering(fig_nr) + cap.separator)~#text(style: "italic", cap.body)
+          #text(weight: "bold", cap.supplement + " " + cap-number + cap.separator)~#text(style: "italic", cap.body)
         ]
       )
     )
@@ -115,6 +115,10 @@
     counter(figure.where(kind: raw)).update(0)
     it
   }
+  // Set Table captions to the top
+  show figure.where(
+    kind: table
+  ): set figure.caption(position: top)
   // Paragraphs
   set par(leading: 1em)
   // Figures
