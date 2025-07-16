@@ -173,8 +173,10 @@
   }
 
   // --- Acknowledgement ---
-  acknowledgement(dark-color: dark-color, acknowledgement-text)
-  print-page-break(print: is-print)
+  if acknowledgement-text != none {
+    acknowledgement(dark-color: dark-color, acknowledgement-text)
+    print-page-break(print: is-print)
+  }
 
   // --- Abstract ---
   v(0.5fr) // these insert fractions of vertical space
@@ -258,7 +260,9 @@
 
   // --- Bibliography ---
   pagebreak()
-  bib-file
+  if bib-file != none {
+    bib-file
+  }
 
   if appendix != none {
     // --- Appendix ---
