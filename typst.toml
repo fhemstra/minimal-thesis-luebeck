@@ -1,6 +1,6 @@
 [package]
 name = "minimal-thesis-luebeck"
-version = "0.6.0"
+version = "0.7.0"
 entrypoint = "thesis-template.typ"
 authors = ["Falko Schick"]
 license = "MIT"
