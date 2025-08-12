@@ -1,5 +1,5 @@
 // #import "@preview/minimal-thesis-luebeck:0.8.0": *
-// #import "../thesis-template.typ": *
+#import "../thesis-template.typ": *
 #import "@preview/abbr:0.2.3"
 
 // True for print version
