@@ -46,6 +46,7 @@
   // #############################################
   // ################# Settings ##################
   // #############################################
+  set page(numbering: "i")
   set text(
     font: body-font, 
     size: 11pt, 
@@ -54,6 +55,14 @@
   // Heading style
   show heading: set block(below: 0.85em, above: 1.75em)
   show heading: set text(font: sans-font, fill: dark-color)
+  // Counters for chapters
+  show heading.where(level: 1): it => {
+    counter(math.equation).update(0)
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(figure.where(kind: raw)).update(0)
+    it
+  }
   // Heading outline and numbers
   show heading.where(level: 1): set text(size: 22pt)
   show heading.where(level: 2): set text(size: 15pt)
@@ -80,11 +89,6 @@
   }
   // Math
   show math.equation: set text(weight: 400)
-  // Count headings and number equations
-  show heading.where(level: 1): it => {
-    counter(math.equation).update(0)
-    it
-  }
   set math.equation(numbering: num =>
     numbering("(1.1)", counter(heading).get().first(), num)
   )
@@ -107,13 +111,6 @@
       )
     )
     v(.2cm)
-  }
-  show heading.where(level: 1): it => {
-    counter(math.equation).update(0)
-    counter(figure.where(kind: image)).update(0)
-    counter(figure.where(kind: table)).update(0)
-    counter(figure.where(kind: raw)).update(0)
-    it
   }
   // Set Table captions to the top
   show figure.where(
@@ -150,7 +147,8 @@
     light-color: light-color,
     sans-font: sans-font
   )
-  print-page-break(print: is-print, to: "even")
+  // leave the backside blank and start with page iii
+  print-page-break(print: is-print, to: "odd")
 
   // --- Disclaimer ---
   set page(
@@ -163,37 +161,43 @@
 
     Ich erkläre hiermit an Eides statt, dass ich diese Arbeit selbständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
   ])
-  print-page-break(print: is-print)
+  print-page-break(print: is-print, to: "odd")
 
   // --- Confidentiality notice ---
   if confidentiality-notice != none {
     heading("Sperrvermerk", outlined: false, level: 2)
     confidentiality-notice
-    print-page-break(print: is-print)
+    print-page-break(print: is-print, to: "odd")
   }
 
   // --- Acknowledgement ---
   if acknowledgement-text != none {
     acknowledgement(dark-color: dark-color, acknowledgement-text)
-    print-page-break(print: is-print)
+    print-page-break(print: is-print, to: "odd")
   }
 
   // --- Abstract ---
-  v(0.5fr) // these insert fractions of vertical space
   context {
     let lang = text.lang
     if lang == "de" {
+      v(0.5fr) // these insert fractions of vertical space
       abstract(title: "Zusammenfassung", dark-color: dark-color, abstract-de)
       v(1fr)
+      print-page-break(print: is-print, to: "odd")
+      v(0.5fr)
       abstract(title: "Abstract", dark-color: dark-color, abstract-en)
+      v(1fr)
     } else {
+      v(0.5fr)
       abstract(title: "Abstract", dark-color: dark-color, abstract-en)
       v(1fr)
+      print-page-break(print: is-print, to: "odd")
+      v(0.5fr)
       abstract(title: "Zusammenfassung", dark-color: dark-color, abstract-de)
+      v(1fr)
     }
   }
-  v(1fr)
-  pagebreak()
+  print-page-break(print: is-print, to: "odd")
 
   // --- Table of contents ---
   toc(body-font: body-font, sans-font: sans-font, dark-color: dark-color)
@@ -240,7 +244,7 @@
   // --- List of abbreviations ---
   if abbreviations != none {
     abbreviations
-    pagebreak()
+    print-page-break(print: is-print, to: "odd")
   }
 
   // --- Main body ---

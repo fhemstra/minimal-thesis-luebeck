@@ -20,8 +20,7 @@
 ) = {
   set page(
     margin: (left: 20mm, right: 20mm, top: 20mm, bottom: 30mm),
-    numbering: none,
-    number-align: center,
+    footer: none
   )
   set text(
     font: sans-font, 

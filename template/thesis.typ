@@ -2,6 +2,9 @@
 #import "../thesis-template.typ": *
 #import "@preview/abbr:0.2.3"
 
+// True for print version
+#let is-print = false
+
 #show: thesis.with(
   title-english: "Towards Smart Inventions and their Novelty",
   title-german: "Über schlaue Erfindungen und deren Neuartigkeit",
@@ -28,7 +31,7 @@
   bib-file: bibliography("thesis.bib"),
   dark-color: rgb(0,39,102),
   light-color: rgb(0,145,247),
-  is-print: false,
+  is-print: is-print,
   make-list-of-figures: false,
   make-list-of-tables: false
 )

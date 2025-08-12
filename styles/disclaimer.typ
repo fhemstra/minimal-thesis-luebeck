@@ -14,5 +14,7 @@
   body
 
   parbreak()
+  v(10%)
+  line(length: 35%)
   emph(author)
 }
