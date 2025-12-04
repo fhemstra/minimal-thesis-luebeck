@@ -177,26 +177,22 @@
   }
 
   // --- Abstract ---
+  v(0.5fr) // these insert fractions of vertical space
   context {
     let lang = text.lang
     if lang == "de" {
-      v(0.5fr) // these insert fractions of vertical space
       abstract(title: "Zusammenfassung", dark-color: dark-color, abstract-de)
       v(1fr)
       print-page-break(print: is-print, to: "odd")
-      v(0.5fr)
       abstract(title: "Abstract", dark-color: dark-color, abstract-en)
-      v(1fr)
     } else {
-      v(0.5fr)
       abstract(title: "Abstract", dark-color: dark-color, abstract-en)
       v(1fr)
       print-page-break(print: is-print, to: "odd")
-      v(0.5fr)
       abstract(title: "Zusammenfassung", dark-color: dark-color, abstract-de)
-      v(1fr)
     }
   }
+  v(1fr)
   print-page-break(print: is-print, to: "odd")
 
   // --- Table of contents ---
