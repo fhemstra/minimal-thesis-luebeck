@@ -39,14 +39,13 @@
 
   context {
     let lang = text.lang
+    align(left, text(weight: "bold", degree + "arbeit"))
     if lang == "de" {
       align(left, text(16pt, strong(title-german), fill: dark-color))
       align(left, text(16pt, title-english, fill: dark-color))
-      align(left, text(weight: "bold", degree + "arbeit"))
     } else {
       align(left, text(16pt, strong(title-english), fill: dark-color))
       align(left, text(16pt, title-german, fill: dark-color))
-      align(left, text(weight: "bold", degree + "’s Thesis"))
     }
 
   }
